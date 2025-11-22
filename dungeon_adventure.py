@@ -16,7 +16,7 @@ def main():
             {'name': 'Ailene', 'health': 10, 'inventory': []}
         """
         # TODO: Ask the user for their name using input()
-        playerName = input("Please, enter your name").capitalize().strip()
+        playerName = input("Please, enter your name: ").capitalize().strip()
 
         # TODO: Initialize a dictionary with keys: "name", "health", and "inventory"
         player = {
@@ -179,11 +179,31 @@ def main():
             - Health below 1 ends the game early.
         """
         # TODO: Loop through 5 rooms (1–5)
+        for room in range(1, 6):
         # TODO: Inside each room, prompt player choice using input()
         # TODO: Use if/elif to handle each choice (1–4)
-        # TODO: Break or return appropriately when player quits or dies
+        # TODO: Break or return appropriately when player quits or dies 
+            while True:
+                display_options(room)
+                playerChoice = int(input("Type your choice (1-4): "))
+                if playerChoice == 1:
+                    search_room(player, treasures)
+                    if player["Health"] < 1:
+                        print("Health is too low. You were disconnected!")
+                        end_game(player, treasures)
+                        return
+                elif playerChoice == 2:
+                    print(f'Taking you to room {room + 1}.')
+                    break
+                elif playerChoice == 3:
+                    check_status(player)
+                elif playerChoice == 4:
+                    print('Quitting game.')
+                    return
+                else: 
+                    print(f'C\'mon, {player["Name"]}! Enter a valid choice!')
         # TODO: Call end_game() after all rooms are explored
-
+        end_game(player, treasures)
 
     # -----------------------------------------------------
     # GAME ENTRY POINT (Leave this section unchanged)
