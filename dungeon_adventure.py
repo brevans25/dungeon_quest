@@ -72,7 +72,13 @@ def main():
             4. Quit the game
         """
         # TODO: Print the room number and the 4 menu options listed above
-
+        print(f'''You are in room {room_number}.
+            What would you like to do?
+            1. Search for treasure
+            2. Move to next room
+            3. Check health and inventory
+            4. Quit the game
+''')
 
     def search_room(player, treasures):
         """
