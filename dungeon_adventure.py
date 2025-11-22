@@ -16,9 +16,17 @@ def main():
             {'name': 'Ailene', 'health': 10, 'inventory': []}
         """
         # TODO: Ask the user for their name using input()
-        # TODO: Initialize a dictionary with keys: "name", "health", and "inventory"
-        # TODO: Return the dictionary
+        playerName = input("Please, enter your name").capitalize().strip()
 
+        # TODO: Initialize a dictionary with keys: "name", "health", and "inventory"
+        playerProfile = {
+            "name": playerName,
+            "health": 10,
+            "inventory": []
+        }
+    
+        # TODO: Return the dictionary
+        return playerProfile
 
     def create_treasures():
         """
@@ -37,7 +45,15 @@ def main():
             You can customize treasures or randomize the values using random.randint(3, 12).
         """
         # TODO: Create a dictionary of treasure names and integer values
+        treasureDict = {
+            "Gold Coin": random.randint(0, 100),
+            "Ruby": random.randint(2, 80),
+            "Ancient Scroll": random.randint(1, 5),
+            "Emerald": random.randint(5, 70),
+            "Silver Ring": random.randint(5, 25)
+        }
         # TODO: Return the dictionary
+        return(treasureDict)
 
 
     def display_options(room_number):
